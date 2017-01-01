@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('contact', 'PagesController@getContact');
+Route::get('contact', 'PageController@getContact');
+Route::get('about', 'PageController@getAbout');
+Route::get('/', 'PageController@getIndex');
 
-Route::get('about', 'PagesController@getAbout');
-
-Route::get('/', 'PagesController@getIndex');
+Route::resource('posts', 'PostController');
