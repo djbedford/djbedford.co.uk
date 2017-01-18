@@ -14,37 +14,14 @@
     </div> <!-- close .row -->
     <div class="row">
         <div class="col-md-8">
-            <div class="post">
-                <h3>Post Title</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac magna commodo, posuere sem id,
-                laoreet nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet, diam
-                aliquam feugiat mattis, nisi leo luctus dolor, ut fermentum mi urna elementum massa.</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div> <!-- close .post -->
-            <hr>
-            <div class="post">
-                <h3>Post Title</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac magna commodo, posuere sem id,
-                    laoreet nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet, diam
-                    aliquam feugiat mattis, nisi leo luctus dolor, ut fermentum mi urna elementum massa.</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div> <!-- close .post -->
-            <hr>
-            <div class="post">
-                <h3>Post Title</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac magna commodo, posuere sem id,
-                    laoreet nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet, diam
-                    aliquam feugiat mattis, nisi leo luctus dolor, ut fermentum mi urna elementum massa.</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div> <!-- close .post -->
-            <hr>
-            <div class="post">
-                <h3>Post Title</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac magna commodo, posuere sem id,
-                    laoreet nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet, diam
-                    aliquam feugiat mattis, nisi leo luctus dolor, ut fermentum mi urna elementum massa.</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div> <!-- close .post -->
+            @foreach($posts as $post)
+                <div class="post">
+                    <h3>{{ $post->title }}</h3>
+                    <p>{{ substr($post->body, 0, 300) }}{{ strlen($post->body) > 300 ? '...' : '' }}</p>
+                    <a href="{{ url('blog/' . $post->slug) }}" class="btn btn-primary">Read More</a>
+                </div> <!-- close .post -->
+                <hr>
+            @endforeach
         </div> <!-- close .col-md-8 -->
         <div class="col-md-3 col-md-offset-1">
             <h2>Sidebar</h2>
