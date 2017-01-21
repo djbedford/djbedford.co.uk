@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('login', 'Auth\LoginController@showLoginForm');
+Route::post('login', 'Auth\LoginController@login');
+Route::get('logout', 'Auth\LoginController@logout');
+Route::get('register', 'Auth\RegisterController@showRegistrationForm');
+Route::post('register', 'Auth\RegisterController@register');
 Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])
     ->where('slug', '[\w\d\-\_]+');
 Route::get('blog', ['as' => 'blog.index', 'uses' => 'BlogController@getIndex']);
