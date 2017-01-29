@@ -47,8 +47,8 @@
 @endsection
 
 @section('scripts')
-    {!! HTML::script('js/parsley.min.js') !!}}
-    {!! HTML::script('js/select2.min.js') !!}}
+    {!! HTML::script('js/parsley.min.js') !!}
+    {!! HTML::script('js/select2.min.js') !!}
 
     <script>
         $('.select2-multi').select2();
