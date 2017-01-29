@@ -34,6 +34,10 @@ Route::resource('tags', 'TagController', ['except' => ['create']]);
 
 // Comments
 Route::post('comments/{post_id}', ['as' => 'comments.store', 'uses' => 'CommentController@store']);
+Route::get('comments/{id}/edit', ['as' => 'comments.edit', 'uses' => 'CommentController@edit']);
+Route::put('comments/{id}', ['as' => 'comments.update', 'uses' => 'CommentController@update']);
+Route::delete('comments/{id}', ['as' => 'comments.destroy', 'uses' => 'CommentController@destroy']);
+Route::get('comments/{id}/delete', ['as' => 'comments.delete', 'uses' => 'CommentController@delete']);
 
 Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])
     ->where('slug', '[\w\d\-\_]+');
